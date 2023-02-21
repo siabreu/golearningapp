@@ -1,0 +1,26 @@
+<div class="container text-center justify-content-center">
+  <h1>Venha fazer um curso para alavancar a sua carreira!</h1>
+  <br><br>
+  <div class="row">
+    <div class="col">
+      <%= image_tag("logo.png",size: "300x300") %>
+    </div>
+    <div class="col">
+      <h2>Cursos em Destaque</h2>
+      <div class="row row-cols-1 row-cols-md-1 g-4">
+        <div class="col">
+          <% @courses.limit(5).each do |course| %>
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title"><%= course.name %></h5>
+                <p class="card-text"><%= course.description %></p>
+                <%= link_to "+infos", course_path(course), class: "btn btn-secondary" %>
+                <%= link_to "Enrollment", course_path(course), class: "btn btn-secondary" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
