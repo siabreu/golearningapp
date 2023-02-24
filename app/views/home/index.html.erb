@@ -15,7 +15,12 @@
                 <h5 class="card-title"><%= course.name %></h5>
                 <p class="card-text"><%= course.description %></p>
                 <%= link_to "+infos", course_path(course), class: "btn btn-secondary" %>
-                <%= link_to "Inscreva-se", enrollments_create_path(student_id: Student.last.id, course_id: course.id), class: "btn btn-secondary" %>
+                <%= link_to "Inscreva-se", 
+                  enrollments_create_path(
+                      student_id: current_student ? current_student.id : Student.last.id,
+                      course_id: course.id
+                    ),
+                    class: "btn btn-secondary" %>
               </div>
             </div>
           <% end %>
