@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get 'enrollments/create'
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
   resources :courses
   resources :students
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :enrollments, only: [:new, :create]
 
   # Defines the root path route ("/")
   root to: "home#index"
