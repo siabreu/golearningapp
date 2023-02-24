@@ -1,4 +1,6 @@
 class EnrollmentsController < ApplicationController
+  before_action :authenticate_student!
+
   def create
     @enrollment = Enrollment.new(enrollment_params)
     if @enrollment.save

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'enrollments/create'
+  devise_for :students
+  get "enrollments/create"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :courses
