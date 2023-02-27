@@ -11,6 +11,16 @@
         Inicia em - <%= @course.starts_at.strftime("%d/%m/%Y") %>  |
         Termina em - <%= @course.ends_at.strftime("%d/%m/%Y") %>
       </p>
+      <p class="lead">
+      <% if @course.enrollments.empty? %>
+        Nenhum curso encontrado na sua lista!
+      <% else %>
+        <h2>Alunos inscritos</h2>
+        <% @course.students.each do |student| %>
+          <p><%= student.name %>
+        <% end %>
+      <% end %>
+    </p>
     </p>
     <br>
     <%= link_to "Edit", edit_course_path(@course), class: "btn btn-secondary" %>
