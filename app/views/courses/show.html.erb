@@ -8,8 +8,8 @@
     <p class="lead">
       <%= @course.description %>
       <p>
-        Inicia em - <%= @course.starts_at.strftime("%d/%m/%Y") %>  |
-        Termina em - <%= @course.ends_at.strftime("%d/%m/%Y") %>
+        Inicia em - <%= l(@course.starts_at, format: :date_short) %>  |
+        Termina em - <%= l(@course.ends_at, format: :date_short) %>
       </p>
       <p class="lead">
       <% if @course.enrollments.empty? %>

@@ -31,3 +31,7 @@
 
 en:
   hello: "Hello world"
+
+  time:
+    formats:
+      date_short: "%d/%m/%Y"

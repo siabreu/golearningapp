@@ -18,8 +18,8 @@
       <tr>
         <td><%= course.name %></td>
         <td><%= course.description %></td>
-        <td><%= course.starts_at %></td>
-        <td><%= course.ends_at %></td>
+        <td><%= l course.starts_at, format: :date_short %></td>
+        <td><%= l course.ends_at, format: :date_short %></td>
         <td><%= course.active? ? "Ativo" : "Inativo" %></td>
         <td><%= link_to "Exibir", course, class: "btn btn-secondary" %></td>
         <td><%= link_to "Editar", edit_course_path(course), class: "btn btn-secondary" %></td>
