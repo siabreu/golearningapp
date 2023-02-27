@@ -12,14 +12,14 @@
         <li class="na v-item">
             <%= link_to "Alunos", students_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Meus Cursos", current_student.present? ? student_path(current_student.id) : "", class: "nav-link" %>
-        </li>
         <% if student_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Meus Cursos", current_student.present? ? student_path(current_student.id) : "", class: "nav-link" %>
+          </li>
           <li class="nav-item">
             <%= link_to "Sign Out", destroy_student_session_path, data: { turbo_method: :delete }, class: "nav-link" %>
           </li>
-           <li class="nav-item">
+          <li class="nav-item">
             <%= link_to "Olá #{current_student.name}", "", class: "nav-link" %>
           </li>
         <% else %>
