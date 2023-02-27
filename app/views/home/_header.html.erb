@@ -13,7 +13,7 @@
             <%= link_to "Alunos", students_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Sobre", "", class: "nav-link" %>
+          <%= link_to "Meus Cursos", student_path(current_student.id), class: "nav-link" %>
         </li>
         <% if student_signed_in? %>
           <li class="nav-item">
