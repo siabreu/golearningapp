@@ -1,5 +1,6 @@
 class Enrollment < ApplicationRecord
-  validates :course_id, uniqueness: { scope: :student_id }
+  validates :student_id, presence: true
+  validates :course_id, presence: true, uniqueness: { scope: :student_id }
 
   belongs_to :course
   belongs_to :student
