@@ -3,9 +3,10 @@ class EnrollmentsController < ApplicationController
 
   def create
     @enrollment = Enrollment.new(enrollment_params)
-    if @enrollment.save
-      redirect_to root_path, notice: "registration completed."
-    end
+    message = "you are already enrolled in this course."
+
+    message = "registration completed." if @enrollment.save
+    redirect_to root_path, notice: message
   end
 
   private
