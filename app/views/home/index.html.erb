@@ -9,13 +9,13 @@
       <h2>Cursos em Destaque</h2>
       <div class="row row-cols-1 row-cols-md-1 g-4">
         <div class="col">
-          <% @courses.limit(5).each do |course| %>
+          <% @courses.active.limit(5).each do |course| %>
             <div class="card mb-3">
               <div class="card-body">
                 <h5 class="card-title"><%= course.name %></h5>
                 <p class="card-text"><%= course.description %></p>
                 <%= link_to "+infos", course_path(course), class: "btn btn-secondary" %>
-                <%= link_to "Inscreva-se", 
+                <%= link_to "Inscreva-se",
                   enrollments_create_path(
                       student_id: current_student ? current_student.id : Student.last.id,
                       course_id: course.id
