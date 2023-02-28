@@ -5,7 +5,8 @@ RSpec.describe "courses/show", type: :view do
     assign(:course, Course.create!(
       name: "Name",
       description: "MyText",
-      ends_at: "Ends At"
+      starts_at: 2.days.ago,
+      ends_at: 20.days.after
     ))
   end
 
@@ -13,6 +14,7 @@ RSpec.describe "courses/show", type: :view do
     render
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/MyText/)
+    expect(rendered).to match(/Starts At/)
     expect(rendered).to match(/Ends At/)
   end
 end
