@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Course#index", type: :system do
+RSpec.describe "Student#index", type: :system do
   context "Loggin" do
     let(:student) { create :student }
     let(:course) { create :course }
@@ -12,16 +12,12 @@ RSpec.describe "Course#index", type: :system do
     end
 
     it "index" do
-      visit courses_path
+      visit students_path
 
       expect(page).to have_content "Nome"
-      expect(page).to have_content "Descrição"
-      expect(page).to have_content "Nome"
-      expect(page).to have_content "Início"
-      expect(page).to have_content "Término"
-      expect(page).to have_content "Status"
-
-      expect(page).to have_content course.name
+      expect(page).to have_content "Email"
+      expect(page).to have_content student.name
+      expect(page).to have_content student.email
     end
   end
 end
