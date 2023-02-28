@@ -1,24 +1,25 @@
-# README
+# Projeto GoLearning App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este projeto demonstra um relacionanto N:N entre as tabelas `Students` e `Courses`. Usando a taleba `Enrollments` como tabela associativa.
 
-Things you may want to cover:
+Algumas características
 
-* Ruby version
+* Ruby version: ruby 3.1.0
 
-* System dependencies
+* Rails version: Rails 7.0.4.2
 
-* Configuration
+* Autenticação com a gem `devise`
 
-* Database creation
+* Suite de testes com `rspec`, `factoryBot`, `capybara` (**model**, **routing**, **request**, **system**)
 
-* Database initialization
+## Funcionalidades
 
-* How to run the test suite
+* Possue uma home que apresenta os 5 cursos em destaques (**ativos** usando **starts_at** e **ends_at**).
 
-* Services (job queues, cache servers, search engines, etc.)
+* Para se inscrever em algum curso, o aluno precisa se cadastrar.
 
-* Deployment instructions
+* É possível se inscrever em vários cursos que estejam `ativos`. Existe um **scope** e um **método** para determinar os cursos ativos.
 
-* ...
+* É possível ver em quais cursos um aluno de inscreveu.
+
+* É possível ver quais alunos estão inscritos em um curso.
