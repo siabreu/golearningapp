@@ -19,7 +19,7 @@
                   enrollments_path(
                       student_id: current_student ? current_student.id : Student.last.id,
                       course_id: course.id
-                    ),
+                    ), data: { turbo_method: "post" },
                     class: "btn btn-secondary" %>
               </div>
             </div>

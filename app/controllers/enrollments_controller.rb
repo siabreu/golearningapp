@@ -3,10 +3,14 @@ class EnrollmentsController < ApplicationController
 
   def create
     @enrollment = Enrollment.new(enrollment_params)
-    message = "you are already enrolled in this course."
 
-    message = "registration completed." if @enrollment.save
-    redirect_to root_path, notice: message
+    respond_to do |format|
+      if @enrollment.save
+        format.html { redirect_back(fallback_location: root_path, notice: "registration completed.") }
+      else
+        format.html { redirect_to root_url, status: :unprocessable_entity, notice: "you are already enrolled in this course." }
+      end
+    end
   end
 
   private

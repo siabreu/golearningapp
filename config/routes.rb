@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :courses
   resources :students
-  get "/enrollments", to: "enrollments#create"
+  resources :enrollments, only: :create
 
   # Defines the root path route ("/")
   root to: "home#index"
