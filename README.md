@@ -23,3 +23,5 @@ Algumas características
 * É possível ver em quais cursos um aluno de inscreveu.
 
 * É possível ver quais alunos estão inscritos em um curso.
+
+![Ruby](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
